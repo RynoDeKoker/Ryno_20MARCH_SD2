@@ -1,15 +1,12 @@
 from models import User
 
-# Create Dictionary
 user_db = {
     "admin": User(1, "admin", "1234", "admin"),
     "john": User(2, "john", "pass", "user")
 }
 
-#Set vairiable to none
 current_user = None
 
-#Login + dashboard
 while True:
     if current_user is None:
         print("\n--- LOGIN ---")
