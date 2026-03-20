@@ -1,3 +1,13 @@
+# Team 1
+
+#Contributors: 
+    #Student A: Ryno 
+    #Student B: Lisa
+    #Student C: Blaze
+    #Student D: Tyler C
+
+
+
 # models.py
 
 class User:
