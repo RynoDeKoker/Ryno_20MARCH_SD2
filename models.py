@@ -8,7 +8,7 @@
 
 
 
-# models.py
+# class for User
 
 class User:
     def __init__(self, user_id, username, password, role):
@@ -17,7 +17,7 @@ class User:
         self.password = password
         self.role = role
 
-
+# class for Product
 class Product:
     def __init__(self, product_id, name, price, stock_qty):
         self.product_id = product_id
@@ -25,7 +25,7 @@ class Product:
         self.price = price
         self.stock_qty = stock_qty
 
-
+# class for Order
 class Order:
     def __init__(self, order_id, user_id, product_id, quantity):
         self.order_id = order_id
@@ -33,7 +33,7 @@ class Order:
         self.product_id = product_id
         self.quantity = quantity
 
-
+# class for Warehouse
 class Warehouse:
     def __init__(self, warehouse_id, location, capacity):
         self.warehouse_id = warehouse_id

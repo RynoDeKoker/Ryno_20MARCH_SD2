@@ -1,5 +1,7 @@
+#Importing from User
 from models import User
 
+# Our user dictionary
 user_db = {
     "admin": User(1, "admin", "1234", "admin"),
     "john": User(2, "john", "pass", "user")
@@ -7,6 +9,7 @@ user_db = {
 
 current_user = None
 
+# Loop for login on dashboard
 while True:
     if current_user is None:
         print("\n--- LOGIN ---")
