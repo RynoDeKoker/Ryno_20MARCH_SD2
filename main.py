@@ -4,7 +4,7 @@ from models import User
 # Our user dictionary
 user_db = {
     "admin": User(1, "admin", "1234", "admin"),
-    "john": User(2, "john", "pass", "user")
+    "user": User(2, "john", "pass", "user")
 }
 
 current_user = None
