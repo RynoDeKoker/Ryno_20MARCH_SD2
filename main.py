@@ -1,8 +1,5 @@
 # Simple User Authentication System
-#importing the User class from the models module
-
-#Importing from User
-#ae04fb91e1f9ba79c3653bf0520749faf1f6d2b7
+# Importing from User
 from models import User
 
 # Our user dictionary
@@ -14,10 +11,6 @@ user_db = {
 
 # Variable to track the currently logged-in user
 current_user = None
-
-# Main loop for the authentication system
-current_user = None
-
 # Loop for login on dashboard
 while True:
     

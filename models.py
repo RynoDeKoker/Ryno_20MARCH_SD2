@@ -7,8 +7,11 @@
     #Student D: Tyler C
     #Student E: Ian J
 
+#<<<<<<< HEAD
 
 
+#=======
+#>>>>>>> ffef1240e334fabbdcb9c1137b42f726195f015f
 # class for User
 
 class User:
