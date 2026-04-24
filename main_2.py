@@ -1,14 +1,17 @@
 import pyodbc
 
 def connect_db():
-
-    conn = pyodbc.connect(
-        'DRIVER={SQL Server};'
-        'SERVER=YOUR LOCAL SERVER ADDRESS;'
-        'DATABASE=ApexLogisticsDB;'
-        'Trusted_Connection=yes;'
-    )
-    return conn
+    try:
+        conn = pyodbc.connect(
+            'DRIVER={SQL Server};'
+            r'SERVER=localhost\SQLEXPRESS;'
+            'DATABASE=ApexLogisticsDB;'
+            'Trusted_Connection=yes;'
+        )
+        return conn
+    except pyodbc.Error as e:
+        print("Database connection failed:", e)
+        return None
 
 def login(conn):
 
@@ -75,9 +78,13 @@ def menu(conn):
 def main():
 
     conn = connect_db()
+    if conn is None:
+        print("Unable to connect to database. Check your SERVER value and that SQL Server is running.")
+        return
     if login(conn):
         menu(conn)
     else:
         print("Access denied")
+
 if __name__ == "__main__":
     main()
