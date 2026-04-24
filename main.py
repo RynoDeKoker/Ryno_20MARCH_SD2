@@ -31,3 +31,4 @@ while True:
         if choice == "1":
             current_user = None
             print("Logged out successfully")
+

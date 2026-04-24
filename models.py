@@ -6,8 +6,6 @@
     #Student C: Blaze
     #Student D: Tyler C
 
-
-
 # class for User
 
 class User:
