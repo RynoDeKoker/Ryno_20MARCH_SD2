@@ -19,11 +19,9 @@ def connect_db():
 def login(conn):
 
     cursor = conn.cursor()
- 
     username = input("Enter username: ")
 
     password = input("Enter password: ")
- 
     # Use parameterized query (prevents SQL injection)
 
     query = """
@@ -33,11 +31,9 @@ def login(conn):
     WHERE username = ? AND password = ?
 
     """
- 
     cursor.execute(query, (username, password))
 
     user = cursor.fetchone()
- 
     if user:
 
         print("Login successful")
@@ -53,13 +49,11 @@ def login(conn):
 def create_product(conn):
 
     cursor = conn.cursor()
- 
     name = input("Enter product name: ")
 
     price = input("Enter price: ")
 
     stock = input("Enter stock quantity: ")
- 
     query = """
 
     INSERT INTO tblProducts (name, price, stock_qty)
@@ -67,23 +61,17 @@ def create_product(conn):
     VALUES (?, ?, ?)
 
     """
- 
     cursor.execute(query, (name, price, stock))
-
     conn.commit()
- 
     print("Product added successfully")
 
 def view_products(conn):
 
-    cursor = conn.cursor()
- 
+    cursor = conn.cursor() 
     query = "SELECT * FROM tblProducts"
 
     cursor.execute(query)
- 
     products = cursor.fetchall()
- 
     print("\n--- Product List ---")
 
     for product in products:
@@ -99,9 +87,7 @@ def menu(conn):
         print("2. View Products")
 
         print("3. Exit")
- 
         choice = input("Choose option: ")
- 
         if choice == "1":
 
             create_product(conn)
@@ -123,7 +109,6 @@ def menu(conn):
 def main():
 
     conn = connect_db()
- 
     if login(conn):
 
         menu(conn)
@@ -131,9 +116,6 @@ def main():
     else:
 
         print("Access denied")
- 
- 
 if __name__ == "__main__":
 
     main()
- 
